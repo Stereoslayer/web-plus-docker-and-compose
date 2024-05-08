@@ -10,7 +10,7 @@ services:
     env_file: .env
     restart: on-failure
     ports:
-      - '4000:3000'
+      - '4000:4000'
     links:
       - postgres
 
