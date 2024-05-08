@@ -5,7 +5,7 @@ RUN npm i
 COPY . .
 RUN npm run build && rm -rf ./src && rm -rf ./node_modules
 
-FROM nginx:1.23.1-alpine
+FROM nginx:latest
 COPY --from=builder /app/build ./usr/share/nginx/html
 COPY /nginx/conf.d/default.conf /etc/nginx/conf.d
 EXPOSE 8080
